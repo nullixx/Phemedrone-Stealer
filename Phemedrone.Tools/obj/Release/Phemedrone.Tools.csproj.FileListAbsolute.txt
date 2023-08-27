@@ -1,0 +1,10 @@
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\bin\Release\Phemedrone.Tools.exe
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\bin\Release\Phemedrone.Tools.pdb
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\bin\Release\dnlib.dll
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\bin\Release\dnlib.xml
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\obj\Release\Phemedrone.Tools.csproj.AssemblyReference.cache
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\obj\Release\Phemedrone.Tools.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\obj\Release\Phemedrone.Tools.csproj.CoreCompileInputs.cache
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\obj\Release\Phemedrone.Tools.csproj.CopyComplete
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\obj\Release\Phemedrone.Tools.exe
+C:\Users\Admin1\Desktop\SRC Phemedrone Stealer\Phemedrone.Tools\obj\Release\Phemedrone.Tools.pdb
