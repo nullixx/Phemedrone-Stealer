@@ -1,10 +1,10 @@
 # 💉 Phemedrone Stealer 💉 - The best open source Stealer​
-Coded by rey vortex aka mitsuaka & Nullixx
-Phemedrone Stealer is written in C# without any dependencies. Logs gate is a standalone PHP script, which you might customize whenever you want.
+Coded by rey vortex aka mitsuaka & Nullixx  
+Phemedrone Stealer is written in C# without any dependencies. Logs gate is a standalone PHP script, which you might customize whenever you want.  
 
-Join our Telegram channel to get help or stay tuned about our recent projects
+Join our Telegram channel to get help or stay tuned about our recent projects  
 
-🟥 DISCLAIMER 🟥 This project is made for EDUCATIONAL PURPOSES ONLY. We are not responsible for any illegal actions dealt using our project. You take all responsibility for any damage caused by Phemedrone Stealer.
+🟥 DISCLAIMER 🟥 This project is made for EDUCATIONAL PURPOSES ONLY. We are not responsible for any illegal actions dealt using our project. You take all responsibility for any damage caused by Phemedrone Stealer.  
 
 # Features 📝​
 
