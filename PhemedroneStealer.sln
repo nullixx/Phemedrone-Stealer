@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phemedrone-Stealer", "Pheme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phemedrone.Tools", "Phemedrone.Tools\Phemedrone.Tools.csproj", "{72EC07EC-7A32-4C40-AE8D-B610F319DD7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phemedrone.Panel", "Phemedrone.Panel\Phemedrone.Panel.csproj", "{496F8CB5-A7CD-4D5A-80B7-977419D144CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{72EC07EC-7A32-4C40-AE8D-B610F319DD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72EC07EC-7A32-4C40-AE8D-B610F319DD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72EC07EC-7A32-4C40-AE8D-B610F319DD7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496F8CB5-A7CD-4D5A-80B7-977419D144CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496F8CB5-A7CD-4D5A-80B7-977419D144CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496F8CB5-A7CD-4D5A-80B7-977419D144CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496F8CB5-A7CD-4D5A-80B7-977419D144CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
