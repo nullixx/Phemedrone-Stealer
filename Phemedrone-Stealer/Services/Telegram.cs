@@ -76,8 +76,6 @@ namespace Phemedrone.Services
                     }
                 }
             }
-
-            ServiceCounter.HasTg = array.Count > 0;
             return array.ToArray();
         }
     }

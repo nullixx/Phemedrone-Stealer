@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Net;
+using System.Reflection;
 
 namespace Phemedrone.Panel;
 
@@ -27,6 +28,9 @@ public class ConsoleTable
         },
         {
             "pass:cookies:wallets", (3, typeof(string))
+        },
+        {
+            "tag", (1, typeof(string))
         }
     };
     private Dictionary<string, KeyBind> _keyBinds = new()
@@ -96,7 +100,13 @@ public class ConsoleTable
                     },
                 }
             }
+        },
+        {
+        "Clear Panel", new KeyBind()
+        {
+            Key = ConsoleKey.Delete
         }
+    }
     };
     
     public ConsoleTable()
@@ -163,27 +173,39 @@ public class ConsoleTable
             else selectedRow.Item2 = !selectedRow.Item2;
         };
         _keyBinds["Select log"].Binds!["Open"].OnKeyPress = () =>
-        {   
-            ProcessStartInfo cmdStartInfo = new ProcessStartInfo
+        {
+            if (selectedfile != null || selectedfile != " ")
             {
-                FileName = "cmd.exe",
-                RedirectStandardInput = true,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
+                ProcessStartInfo cmdStartInfo = new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-            Process cmdProcess = new Process { StartInfo = cmdStartInfo };
+                Process cmdProcess = new Process { StartInfo = cmdStartInfo };
 
-            cmdProcess.Start();
-            
-            cmdProcess.StandardInput.WriteLine($"cd {AppDomain.CurrentDomain.BaseDirectory + $"logs\\"}");
-            cmdProcess.StandardInput.WriteLine($"start {selectedfile}");
+                cmdProcess.Start();
 
-            cmdProcess.StandardInput.WriteLine("exit");
-            cmdProcess.WaitForExit();
-            cmdProcess.Close();
+                cmdProcess.StandardInput.WriteLine($"cd {AppDomain.CurrentDomain.BaseDirectory + $"logs\\"}");
+                cmdProcess.StandardInput.WriteLine($"start {selectedfile}");
+
+                cmdProcess.StandardInput.WriteLine("exit");
+                cmdProcess.WaitForExit();
+                cmdProcess.Close();
+            }
+        };
+        _keyBinds["Clear Panel"].OnKeyPress = () =>
+        {
+            DatabaseWorker db = new DatabaseWorker("files\\users\\clients.sqlite");
+            db.ClearDataBase();
+            Console.Clear();
+            Program.Logs = 0;
+            Process.Start(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\" + AppDomain.CurrentDomain.FriendlyName + ".exe");
+            Environment.Exit(0);
         };
     }
     public void Draw(bool redraw = false)
@@ -275,7 +297,6 @@ public class ConsoleTable
                 if (selectedRow.Item1 - (Console.WindowHeight - 3) * (current ?? 0) == j && !filterMode.Item1)
                 {
                     Console.BackgroundColor = selectedRow.Item2 ? ConsoleColor.Green : ConsoleColor.Blue;
-                    //{e.IP}-{e.Username}-Phemedrone-Report.zip
                     if (Console.BackgroundColor == ConsoleColor.Green)
                     {
                         selectedfile = $"{source[j].Values[1]}-{source[j].Values[2]}-Phemedrone-Report.zip";

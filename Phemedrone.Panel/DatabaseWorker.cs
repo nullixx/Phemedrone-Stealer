@@ -19,11 +19,12 @@ public class DatabaseWorker
         username TEXT,
         hwid TEXT,
         contents TEXT,
+        tag, TEXT
         date DATETIME DEFAULT CURRENT_TIMESTAMP);", _connection);
         command.ExecuteNonQuery();
     }
 
-    public void AddClient(string countryCode, string ip, string username, string hwid, string contents)
+    public void AddClient(string countryCode, string ip, string username, string hwid, string contents, string tag)
     {
         var command = new SQLiteCommand("INSERT INTO clients(country_code, ip, username, hwid, contents) VALUES(@countryCode, @ip, @username, @hwid, @contents)", _connection);
         command.Parameters.AddWithValue("@countryCode", countryCode);
@@ -31,6 +32,7 @@ public class DatabaseWorker
         command.Parameters.AddWithValue("@username", username);
         command.Parameters.AddWithValue("@hwid", hwid);
         command.Parameters.AddWithValue("@contents", contents);
+        command.Parameters.AddWithValue("@tag", tag);
         command.ExecuteNonQuery();
     }
 
@@ -56,5 +58,11 @@ public class DatabaseWorker
             
         }
         return values;
+    }
+
+    public void ClearDataBase()
+    {
+        SQLiteCommand command = new SQLiteCommand("DELETE FROM clients", _connection);
+        command.ExecuteNonQuery();
     }
 }

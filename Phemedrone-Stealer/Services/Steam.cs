@@ -40,11 +40,7 @@ namespace Phemedrone.Services
                         Content = content
                     });
                 }
-                
-                ServiceCounter.HasSteam = true;
             }
-            
-            ServiceCounter.HasSteam = array.Count > 0;
             return array.ToArray();
         }
     }

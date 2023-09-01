@@ -12,7 +12,7 @@ namespace Phemedrone.Tools
         {
             Console.CursorVisible = false;
             Console.OutputEncoding = Encoding.UTF8;
-            Console.Title = "Phemedrone Stealer Tools | t.me/freakcodingplace | Version: 2.0.3";
+            Console.Title = "Phemedrone Stealer Tools | t.me/freakcodingplace | Version: 2.1.0";
 
             var option = new OptionSelection<string>(new OptionSelectionSettings<string>
             {

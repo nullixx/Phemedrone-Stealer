@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using Phemedrone.Classes;
 using Phemedrone.Extensions;
-using Phemedrone.Services;
 
 namespace Phemedrone.Services
 {

