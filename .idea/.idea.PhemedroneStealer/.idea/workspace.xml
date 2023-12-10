@@ -10,40 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58e3c353-9eb4-4346-856a-9274b580599d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/PhemedroneStealer/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/PhemedroneStealer/FileContentIndex/40fa81fc-35c2-47fe-92fc-37e93208f24e.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/ComparableIpAddress.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/ConsoleTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/DatabaseWorker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/Helper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/KeyBind.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/LogEntry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/Phemedrone.Panel.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/TcpServer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1Phemedrone.Panel/Telegram.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Protections/AntiRepit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PhemedroneStealer.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Config.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Extensions/BrowserHelpers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Extensions/BrowserHelpers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Phemedrone-Stealer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Phemedrone-Stealer.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Protections/AntiVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Protections/AntiVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Protections/CheckAll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Protections/CheckAll.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Senders/Gate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Senders/Gate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Senders/ISender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Senders/ISender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Senders/Telegram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Senders/Telegram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/ServiceCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/ServiceCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Chromium.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Chromium.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Services/FileGrabber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Services/FileGrabber.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Gecko.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Gecko.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Information.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Information.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Steam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Steam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Telegram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone-Stealer/Services/Telegram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone.Tools/Builder/Arguments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone.Tools/Builder/Arguments.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone.Tools/Builder/Phase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone.Tools/Builder/Phase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Phemedrone.Tools/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Phemedrone.Tools/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhemedroneStealer.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PhemedroneStealer.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/PhemedroneStealer/FileContentIndex/4d369347-7225-4163-824c-dcafa8b03e0c.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/PhemedroneStealer/v17/.futdcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PhemedroneStealer/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/PhemedroneStealer/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PhemedroneStealer/FileContentIndex/df21272a-e120-4555-969c-b128fa472515.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PhemedroneStealer/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/PhemedroneStealer/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/phemedronestealer.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/phemedronestealer.metadata.v7.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/phemedronestealer.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/phemedronestealer.projects.v7.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +49,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -88,29 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "owner",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Admin1\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Admin1\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Admin1\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Admin1\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Admin1\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Admin1\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.Phemedrone-Stealer">
     <configuration name="Phemedrone-Stealer" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -203,6 +177,7 @@
       <workItem from="1702202859981" duration="1141000" />
       <workItem from="1702204096577" duration="150000" />
       <workItem from="1702204683137" duration="327000" />
+      <workItem from="1702208811970" duration="284000" />
     </task>
     <task id="LOCAL-00001" summary="Project Renamed">
       <created>1688202404982</created>

