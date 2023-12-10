@@ -1,6 +1,6 @@
 ﻿/*
     Phemedrone Stealer
-    Coded by https://t.me/reyvortex & https://t.me/TheDyer
+    Coded by https://t.me/webster480 & https://t.me/TheDyer
     !WARNING! ALL CODE IS FOR INTRODUCTORY PURPOSES WE ARE NOT RESPONSIBLE FOR WHAT YOU HAVE DONE !WARNING!
 */
 using System.IO;

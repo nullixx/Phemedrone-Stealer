@@ -1,0 +1,8 @@
+C:\C# Projects\HeartStealer\HeartStealer\bin\Release\HeartStealer.exe
+C:\C# Projects\HeartStealer\HeartStealer\bin\Release\HeartStealer.pdb
+C:\C# Projects\HeartStealer\HeartStealer\obj\Release\HeartStealer.csproj.AssemblyReference.cache
+C:\C# Projects\HeartStealer\HeartStealer\obj\Release\HeartStealer.csproj.SuggestedBindingRedirects.cache
+C:\C# Projects\HeartStealer\HeartStealer\obj\Release\HeartStealer.csproj.CoreCompileInputs.cache
+C:\C# Projects\HeartStealer\HeartStealer\obj\Release\HeartStealer.exe
+C:\C# Projects\HeartStealer\HeartStealer\obj\Release\HeartStealer.pdb
+C:\C# Projects\HeartStealer\HeartStealer\obj\Release\HeartStealer.csproj.ResolveComReference.cache

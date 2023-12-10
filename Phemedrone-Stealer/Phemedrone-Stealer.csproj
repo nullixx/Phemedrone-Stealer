@@ -1,122 +1,123 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{4F484650-2787-4FAC-A477-EC30FFAFCD5D}</ProjectGuid>
-        <OutputType>WinExe</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Phemedrone-Stealer</RootNamespace>
-        <AssemblyName>system</AssemblyName>
-        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Management" />
-        <Reference Include="System.Windows.Forms" />
-        <Reference Include="System.Xml" />
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Classes\BCrypt.cs" />
-        <Compile Include="Classes\LogRecord.cs" />
-        <Compile Include="Cryptography\AesGcm.cs" />
-		<Compile Include="Classes\PriorityLevel.cs" />
-		<Compile Include="Classes\Asn1DerObject.cs" />
-        <Compile Include="Classes\BCrypt.cs" />
-        <Compile Include="Classes\BerkeleyDB.cs" />
-        <Compile Include="Cryptography\DpApi.cs" />
-        <Compile Include="Extensions\BrowserHelpers.cs" />
-		<Compile Include="Cryptography\Asn1Der.cs" />
-        <Compile Include="Extensions\FileManager.cs" />
-        <Compile Include="Extensions\ImportHider.cs" />
-		<Compile Include="Cryptography\Helpers.cs" />
-        <Compile Include="Cryptography\Hashing\PBE.cs" />
-        <Compile Include="Cryptography\Hashing\PBKDF2.cs" />
-        <Compile Include="Cryptography\TripleDes.cs" />
-        <Compile Include="Extensions\JsonParser.cs" />
-        <Compile Include="Extensions\LockHelper.cs" />
-        <Compile Include="Extensions\NullableValue.cs" />
-        <Compile Include="Extensions\RuntimeResolver.cs" />
-        <Compile Include="Extensions\SQLiteReader.cs" />
-        <Compile Include="Extensions\ZipStorage.cs" />
-        <Compile Include="Config.cs" />
-        <Compile Include="Program.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Protections\AntiDebugger.cs" />
-        <Compile Include="Protections\AntiVM.cs" />
-        <Compile Include="Protections\CheckAll.cs" />
-        <Compile Include="Protections\CISCheck.cs" />
-        <Compile Include="Protections\MutexCheck.cs" />
-        <Compile Include="Senders\Gate.cs" />
-        <Compile Include="Senders\ISender.cs" />
-        <Compile Include="Senders\Panel.cs" />
-        <Compile Include="Senders\Telegram.cs" />
-        <Compile Include="ServiceCounter.cs" />
-		<Compile Include="Services\Browsers\IBrowser.cs" />
-		<Compile Include="Services\CryptoWallets.cs" />
-		<Compile Include="Services\FileZilla.cs" />
-		<Compile Include="Services\Gecko.cs" />
-        <Compile Include="Services\Chromium.cs" />
-        <Compile Include="Services\Discord.cs" />
-        <Compile Include="Services\FileGrabber.cs" />
-        <Compile Include="Services\IService.cs" />
-        <Compile Include="Services\Information.cs" />
-        <Compile Include="Services\Screenshot.cs" />
-        <Compile Include="Services\Steam.cs" />
-        <Compile Include="Services\Telegram.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <COMReference Include="System_Drawing">
-        <Guid>{D37E2A3E-8545-3A39-9F4F-31827C9124AB}</Guid>
-        <VersionMajor>2</VersionMajor>
-        <VersionMinor>4</VersionMinor>
-        <Lcid>0</Lcid>
-        <WrapperTool>tlbimp</WrapperTool>
-        <Isolated>False</Isolated>
-        <EmbedInteropTypes>True</EmbedInteropTypes>
-      </COMReference>
-      <COMReference Include="System_Windows_Forms">
-        <Guid>{215D64D2-031C-33C7-96E3-61794CD1EE61}</Guid>
-        <VersionMajor>2</VersionMajor>
-        <VersionMinor>4</VersionMinor>
-        <Lcid>0</Lcid>
-        <WrapperTool>tlbimp</WrapperTool>
-        <Isolated>False</Isolated>
-        <EmbedInteropTypes>True</EmbedInteropTypes>
-      </COMReference>
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F484650-2787-4FAC-A477-EC30FFAFCD5D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Phemedrone-Stealer</RootNamespace>
+    <AssemblyName>system</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\BCrypt.cs" />
+    <Compile Include="Classes\LogRecord.cs" />
+    <Compile Include="Cryptography\AesGcm.cs" />
+    <Compile Include="Classes\PriorityLevel.cs" />
+    <Compile Include="Classes\Asn1DerObject.cs" />
+    <Compile Include="Classes\BCrypt.cs" />
+    <Compile Include="Classes\BerkeleyDB.cs" />
+    <Compile Include="Cryptography\DpApi.cs" />
+    <Compile Include="Extensions\BrowserHelpers.cs" />
+    <Compile Include="Cryptography\Asn1Der.cs" />
+    <Compile Include="Extensions\FileManager.cs" />
+    <Compile Include="Extensions\ImportHider.cs" />
+    <Compile Include="Cryptography\Helpers.cs" />
+    <Compile Include="Cryptography\Hashing\PBE.cs" />
+    <Compile Include="Cryptography\Hashing\PBKDF2.cs" />
+    <Compile Include="Cryptography\TripleDes.cs" />
+    <Compile Include="Extensions\JsonParser.cs" />
+    <Compile Include="Extensions\LockHelper.cs" />
+    <Compile Include="Extensions\NullableValue.cs" />
+    <Compile Include="Extensions\RuntimeResolver.cs" />
+    <Compile Include="Extensions\SQLiteReader.cs" />
+    <Compile Include="Extensions\ZipStorage.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protections\AntiDebugger.cs" />
+    <Compile Include="Protections\AntiVM.cs" />
+    <Compile Include="Protections\CheckAll.cs" />
+    <Compile Include="Protections\CISCheck.cs" />
+    <Compile Include="Protections\MutexCheck.cs" />
+    <Compile Include="Senders\Gate.cs" />
+    <Compile Include="Senders\ISender.cs" />
+    <Compile Include="Senders\Panel.cs" />
+    <Compile Include="Senders\Telegram.cs" />
+    <Compile Include="ServiceCounter.cs" />
+    <Compile Include="Services\Browsers\IBrowser.cs" />
+    <Compile Include="Services\CryptoWallets.cs" />
+    <Compile Include="Services\FileZilla.cs" />
+    <Compile Include="Services\Gecko.cs" />
+    <Compile Include="Services\Chromium.cs" />
+    <Compile Include="Services\Discord.cs" />
+    <Compile Include="Services\FileGrabber.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\Information.cs" />
+    <Compile Include="Services\Screenshot.cs" />
+    <Compile Include="Services\Steam.cs" />
+    <Compile Include="Services\Telegram.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="System_Drawing">
+      <Guid>{D37E2A3E-8545-3A39-9F4F-31827C9124AB}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="System_Windows_Forms">
+      <Guid>{215D64D2-031C-33C7-96E3-61794CD1EE61}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">
     </Target>
     <Target Name="AfterBuild">
     </Target>
     -->
-
 </Project>

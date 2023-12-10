@@ -1,0 +1,46 @@
+Index: HeartStealer/HeartStealer.csproj
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n    <Import Project=\"$(MSBuildExtensionsPath)\\$(MSBuildToolsVersion)\\Microsoft.Common.props\" Condition=\"Exists('$(MSBuildExtensionsPath)\\$(MSBuildToolsVersion)\\Microsoft.Common.props')\" />\r\n    <PropertyGroup>\r\n        <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n        <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\r\n        <ProjectGuid>{4F484650-2787-4FAC-A477-EC30FFAFCD5D}</ProjectGuid>\r\n        <OutputType>Exe</OutputType>\r\n        <AppDesignerFolder>Properties</AppDesignerFolder>\r\n        <RootNamespace>HeartStealer</RootNamespace>\r\n        <AssemblyName>HeartStealer</AssemblyName>\r\n        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>\r\n        <FileAlignment>512</FileAlignment>\r\n        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>\r\n    </PropertyGroup>\r\n    <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' \">\r\n        <PlatformTarget>AnyCPU</PlatformTarget>\r\n        <DebugSymbols>true</DebugSymbols>\r\n        <DebugType>full</DebugType>\r\n        <Optimize>false</Optimize>\r\n        <OutputPath>bin\\Debug\\</OutputPath>\r\n        <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n        <ErrorReport>prompt</ErrorReport>\r\n        <WarningLevel>4</WarningLevel>\r\n    </PropertyGroup>\r\n    <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' \">\r\n        <PlatformTarget>AnyCPU</PlatformTarget>\r\n        <DebugType>pdbonly</DebugType>\r\n        <Optimize>true</Optimize>\r\n        <OutputPath>bin\\Release\\</OutputPath>\r\n        <DefineConstants>TRACE</DefineConstants>\r\n        <ErrorReport>prompt</ErrorReport>\r\n        <WarningLevel>4</WarningLevel>\r\n    </PropertyGroup>\r\n    <ItemGroup>\r\n        <Reference Include=\"System\" />\r\n        <Reference Include=\"System.Core\" />\r\n        <Reference Include=\"System.Data\" />\r\n        <Reference Include=\"System.Xml\" />\r\n    </ItemGroup>\r\n    <ItemGroup>\r\n        <Compile Include=\"Classes\\LogRecord.cs\" />\r\n        <Compile Include=\"Program.cs\" />\r\n        <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n        <Compile Include=\"Services\\IService.cs\" />\r\n        <Compile Include=\"Services\\Template.cs\" />\r\n    </ItemGroup>\r\n    <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n         Other similar extension points exist, see Microsoft.Common.targets.\r\n    <Target Name=\"BeforeBuild\">\r\n    </Target>\r\n    <Target Name=\"AfterBuild\">\r\n    </Target>\r\n    -->\r\n\r\n</Project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/HeartStealer/HeartStealer.csproj b/HeartStealer/HeartStealer.csproj
+--- a/HeartStealer/HeartStealer.csproj	(revision f24da175b10b80e4e4850e2fdc6044dd3cde0f19)
++++ b/HeartStealer/HeartStealer.csproj	(date 1687957780241)
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
++    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
++            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+     <PropertyGroup>
+         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -33,19 +34,16 @@
+         <WarningLevel>4</WarningLevel>
+     </PropertyGroup>
+     <ItemGroup>
+-        <Reference Include="System" />
+-        <Reference Include="System.Core" />
+-        <Reference Include="System.Data" />
+-        <Reference Include="System.Xml" />
++        <Reference Include="System"/>
++        <Reference Include="System.Core"/>
++        <Reference Include="System.Data"/>
++        <Reference Include="System.Xml"/>
+     </ItemGroup>
+     <ItemGroup>
+-        <Compile Include="Classes\LogRecord.cs" />
+-        <Compile Include="Program.cs" />
+-        <Compile Include="Properties\AssemblyInfo.cs" />
+-        <Compile Include="Services\IService.cs" />
+-        <Compile Include="Services\Template.cs" />
++        <Compile Include="Program.cs"/>
++        <Compile Include="Properties\AssemblyInfo.cs"/>
+     </ItemGroup>
+-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
++    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+          Other similar extension points exist, see Microsoft.Common.targets.
+     <Target Name="BeforeBuild">

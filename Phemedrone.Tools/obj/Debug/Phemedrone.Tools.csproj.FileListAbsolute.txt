@@ -1,0 +1,9 @@
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\bin\Debug\Phemedrone.Tools.exe
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\bin\Debug\Phemedrone.Tools.pdb
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\bin\Debug\dnlib.dll
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\bin\Debug\dnlib.xml
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\obj\Debug\Phemedrone.Tools.csproj.AssemblyReference.cache
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\obj\Debug\Phemedrone.Tools.csproj.CoreCompileInputs.cache
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\obj\Debug\Phemedrone.Tools.csproj.CopyComplete
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\obj\Debug\Phemedrone.Tools.exe
+C:\C# Projects\PhemedroneStealer\Phemedrone.Tools\obj\Debug\Phemedrone.Tools.pdb

