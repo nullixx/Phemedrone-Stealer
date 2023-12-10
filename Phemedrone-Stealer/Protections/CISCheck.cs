@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Phemedrone.Protections
@@ -23,14 +24,7 @@ namespace Phemedrone.Protections
                 new CultureInfo("tg-Cyrl-TJ")
             };
 
-            foreach (InputLanguage language in languages)
-            {
-                if (Array.Exists(desiredCultures, culture => culture.Equals(language.Culture))) // wtf is this
-                {
-                    return true;
-                }
-            }
-            return false;
+            return languages.Cast<InputLanguage>().Any(language => Array.Exists(desiredCultures, culture => culture.Equals(language.Culture)));
         }
     }
 }

