@@ -22,8 +22,6 @@ namespace Phemedrone.Protections
                 "bhyve bhyve ", "KVMKVMKVM\0\0\0", "TCGTCGTCGTCG", "Microsoft Hv", "MicrosoftXTA", " lrpepyh  vr",
                 "VMwareVMware", "XenVMMXenVMM", "ACRNACRNACRN", " QNXQVMBSQG ", "VirtualApple"
             };
-        
-            bool flag = false;
 
             /*
              * Check if the CPU supports the CPUID instruction.
@@ -43,13 +41,13 @@ namespace Phemedrone.Protections
                 {
                     if (brand == manufacturerId)
                     {
-                        flag = true;
+                        return true;
                     }
                 }
             }
 
             var gpus = Information.GetGPUs();
-            return _ = flag || virtualGpus.Any(x => gpus.Any(y => y.Contains(x)));
+            return _ = virtualGpus.Any(x => gpus.Any(y => y.Contains(x)));
         }
     }
 }
